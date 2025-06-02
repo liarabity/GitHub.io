@@ -1,0 +1,97 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+/* 主容器 */
+.container {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* 行样式 */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.last-row {
+    justify-content: center;
+    gap: 40px;
+}
+
+.last-row .card {
+    margin: 0 220px; /* 通过外边距实现两边间距 */
+}
+/* 卡片样式 */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-image {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0; /* 只圆角上方 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease;
+}
+
+.card-image:hover {
+    transform: translateY(-5px);
+}
+
+.white-box {
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    border-radius: 0 0 20px 20px; /* 只圆角下方 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    margin-top: 20px;
+}
+
+
+/* 响应式设计 */
+@media (max-width: 1300px) {
+    .row {
+        flex-wrap: wrap;
+    }
+    
+    .card {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    .card-image, .white-box {
+        width: 350px;
+    }
+    
+    .card-image {
+        height: 262.5px; /* 保持4:3比例 */
+    }
+    
+    .white-box {
+        height: 175px;
+    }
+}
